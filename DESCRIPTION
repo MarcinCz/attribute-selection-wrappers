@@ -1,0 +1,9 @@
+Package: mow-attr-selection-wrapper
+Type: Package
+Title: Performs attribute selection using wrappers.
+Version: 1.0
+Date: 2015-01-24
+Author: Marcin Czerwiński, Paweł Kurowski
+Maintainer: Who to complain to <yourfault@somewhere.net>
+Description: Performs attribute selection using wrappers.
+License: What license is it under?
