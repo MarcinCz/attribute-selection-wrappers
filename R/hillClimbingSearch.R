@@ -27,7 +27,7 @@ hillClimbSearch <- function(trainData, trainLabels) {
         }
       }
       tmpQuality = calcModelQuality(trainData[attributeVector], trainLabels)
-      if (as.metric(maxQuality) < tmpQuality){
+      if (maxQuality < tmpQuality){
         maxQuality <- tmpQuality
         maxVector <- attributeVector
       }
