@@ -21,6 +21,13 @@ calcModelQuality <- function(trainData, trainLabels) {
     validation <- trainData[as.vector(folds$subsets[folds$which == i]), ]
     validationResult <- trainLabels[as.vector(folds$subsets[folds$which == i]), ]
     
+    validationResultLevelsCount = length(levels(as.factor(validationResult)))
+    trainResultLevelsCount = length(levels(as.factor(trainResult)))
+    if(validationResultLevelsCount == 1 || trainResultLevelsCount == 1
+       || validationResultLevelsCount != trainResultLevelsCount) {
+      next
+    }
+      
     classifier <- naiveBayes(train, as.factor(trainResult))
     predicted <- predict(classifier, validation)
 
