@@ -24,7 +24,7 @@ calcModelQuality <- function(trainData, trainLabels) {
     classifier <- naiveBayes(train, as.factor(trainResult))
     predicted <- predict(classifier, validation)
 
-    resultsSame <- predicted == as.factor(validationResult)
+    resultsSame <- as.vector(predicted) == validationResult
     quality <- sum(resultsSame == TRUE) / length(resultsSame)
     qualitySum <- qualitySum + quality
     
