@@ -26,9 +26,9 @@ bestFirstSearch <- function(trainData, trainLabels, k = 5, eps = 0) {
        CHECKED[[i]] <- calcModelQuality(trainData[OPEN[i]], trainLabels)
      }
      if(CHECKED[i] > maxQuality){
-       maxQuality <- CHECKED[i]
+       maxQuality <- CHECKED[[i]]
        positionOfMax <- i
-       maxVector <- OPEN[i]
+       maxVector <- OPEN[[i]]
      }
     }
     #dodanie i usuniecie z list zbioru atrybutow o maksymalnej wartości
