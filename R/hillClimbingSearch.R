@@ -21,6 +21,10 @@ hillClimbSearch <- function(trainData, trainLabels) {
       }
       else{
         attributeVector[i] <- 0
+        if (length(attributeVector[attributeVector > 0]) == 0){
+          attributeVector[i] <- i
+          next
+        }
       }
       tmpQuality = calcModelQuality(trainData[attributeVector], trainLabels)
       if (maxQuality < tmpQuality){

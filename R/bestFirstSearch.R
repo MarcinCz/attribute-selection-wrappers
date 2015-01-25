@@ -54,6 +54,10 @@ bestFirstSearch <- function(trainData, trainLabels, k = 5, eps = 0) {
       }
       else{
         attributeVector[i] <- 0
+        if (length(attributeVector[attributeVector > 0]) == 0){
+          attributeVector[i] <- i
+          next
+        }
       }
       alreadyExists <- FALSE
       for(j in 1:length(OPEN)){
