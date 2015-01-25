@@ -34,10 +34,12 @@ hillClimbSearch <- function(trainData, trainLabels) {
       attributeVector[i] <- tmp
       
     }
+    
     if(bestQuality > maxQuality){
       foundBest <- TRUE
     }
     else {
+      attributeVector <- maxVector
       bestQuality <- maxQuality
       bestVector <- maxVector
     }

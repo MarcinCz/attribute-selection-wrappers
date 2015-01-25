@@ -1,9 +1,6 @@
 source("R/modelQuality.R");
 
 bestFirstSearch <- function(trainData, trainLabels, k = 5, eps = 0) {
-#  bestFirstSearch <- function(trainData, trainLabels) {
- # k <- 5 
-  #eps <- 0
   data_dimention <- dim(trainData)[2]
   attributeVector <- rep(0, data_dimention)
   firstColumn <- sample(1:data_dimention, 1)
@@ -47,7 +44,7 @@ bestFirstSearch <- function(trainData, trainLabels, k = 5, eps = 0) {
     
     #expand maxVector
     for(i in 1:data_dimention){
-      attributeVector <- bestVector
+      attributeVector <- maxVector
       tmp <- attributeVector[i]
       if (tmp == 0) {
         attributeVector[i] <- i
@@ -60,15 +57,19 @@ bestFirstSearch <- function(trainData, trainLabels, k = 5, eps = 0) {
         }
       }
       alreadyExists <- FALSE
-      for(j in 1:length(OPEN)){
-        if(vectorEquals(OPEN[j],attributeVector)){
-          alreadyExists <- TRUE
+      if (length(OPEN) != 0){
+        for(j in 1:length(OPEN)){
+          if(vectorEquals(OPEN[[j]],attributeVector)){
+            alreadyExists <- TRUE
+          }
         }
       }
       if(alreadyExists) next
-      for(j in 1:length(CLOSED)){
-        if(vectorEquals(CLOSED[j],attributeVector)){
-          alreadyExists <- TRUE
+      if(length(CLOSED) != 0){
+        for(j in 1:length(CLOSED)){
+          if(vectorEquals(CLOSED[[j]],attributeVector)){
+            alreadyExists <- TRUE
+          }
         }
       }
       if(alreadyExists) next
@@ -81,7 +82,7 @@ bestFirstSearch <- function(trainData, trainLabels, k = 5, eps = 0) {
 }
 
 vectorEquals <- function(v1, v2){
-  equals <- OPEN[i] == attributeVector #porownywanie sekwencji
+  equals <- v1 == v2 #porownywanie sekwencji
   if(length(equals[equals == FALSE]) == 0)
     TRUE
   else
