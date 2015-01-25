@@ -8,3 +8,5 @@ Suggests: MASS
 Description: Attribute selection with wrappers
 License: GPL
 URL: http://www.r-project.org
+Imports:
+    cvTools
