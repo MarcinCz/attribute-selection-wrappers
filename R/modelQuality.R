@@ -10,7 +10,7 @@ calcModelQuality <- function(trainData, trainLabels) {
     require(e1071)    
   }
   
-  k <- 2
+  k <- 5
   qualitySum = 0
   
   folds <- cvFolds(NROW(trainData), K=k)

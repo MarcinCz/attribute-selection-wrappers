@@ -5,7 +5,7 @@ testAttrSelection <- function(trainData, trainLabels, testData, testLabels, sear
   cat("Model quality for all atributes: ", calcModelQuality(trainData, trainLabels), "\n")
   
   timeStarted <- Sys.time()
-  attrVector <- selectAttributes(trainData, testLabels, searchMethod)
+  attrVector <- selectAttributes(trainData, trainLabels, searchMethod)
   timeEnded <- Sys.time()
   
   cat("Attributes selected: ", attrVector, "\n")
