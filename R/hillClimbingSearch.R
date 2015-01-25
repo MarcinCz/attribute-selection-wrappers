@@ -1,6 +1,6 @@
-source("R/modelQuality.R");
-
 hillClimbSearch <- function(trainData, trainLabels) {
+  source("R/modelQuality.R");
+  
   data_dimention <- dim(trainData)[2]
   attributeVector <- rep(0, data_dimention)
   firstColumn <- sample(1:data_dimention, 1)

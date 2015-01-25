@@ -14,9 +14,14 @@ Package: \tab MOWAttrSelection\cr
 Type: \tab Package\cr
 Version: \tab 1.0\cr
 Date: \tab 2015-01-24\cr
-License: \tab What license is it under?\cr
 }
-~~ An overview of how to use the package, including the most important functions ~~
+Usage example:
+
+#select attributes using test data, and test data labels (results)\cr
+attrVector <- selectAttributes(trainData, trainLabels, searchMethod)\cr
+#use selected attributes in your train data\cr
+predict(model, testData[attrVector])\cr
+
 }
 \author{
 MCZ PK
