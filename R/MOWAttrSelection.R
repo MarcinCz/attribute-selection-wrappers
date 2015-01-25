@@ -9,8 +9,8 @@
 #'@examples
 #'#select attributes using test data, and test data labels (results)
 #'attrVector <- selectAttributes(trainData, trainLabels, searchMethod)
-#'use selected attributes in your train data
-#'#predict(model, testData[attrVector])
+#'#use selected attributes in your train data
+#'predict(model, testData[attrVector])
 selectAttributes <- function(trainData, trainLabels,  searchMethod='hill') {
   source("R/hillClimbingSearch.R");
   source("R/bestFirstSearch.R");
